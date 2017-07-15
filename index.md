@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/JBEI/iqtk.svg?style=svg)](https://circleci.com/gh/JBEI/iqtk)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/87bf3dd5af7c4527893917be1d23da10)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JBEI/iqtk&amp;utm_campaign=Badge_Grade)
-
 **Inquiry** is a comprehensive biological data science infrastructure stack.
 
 **We use [GitHub issues](https://github.com/.../issues) for
