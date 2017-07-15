@@ -1,11 +1,4 @@
-<div align="center">
-  <img src="inquiry/docs/assets/logotype_blue_small.png" style="width:100px"></img>
-</div>
-
------------------
-| **`Build Status`** | **`Quality`** |
-|----------------|-----------------|
-|[![CircleCI](https://circleci.com/gh/JBEI/iqtk.svg?style=svg)](https://circleci.com/gh/JBEI/iqtk)|[![Codacy Badge](https://api.codacy.com/project/badge/Grade/87bf3dd5af7c4527893917be1d23da10)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JBEI/iqtk&amp;utm_campaign=Badge_Grade)|
+[![CircleCI](https://circleci.com/gh/JBEI/iqtk.svg?style=svg)](https://circleci.com/gh/JBEI/iqtk)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/87bf3dd5af7c4527893917be1d23da10)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=JBEI/iqtk&amp;utm_campaign=Badge_Grade)
 
 **Inquiry** is a comprehensive biological data science infrastructure stack.
 
@@ -185,12 +178,6 @@ Make sure the serivce account you create has read and write access to the target
 # example
 uplink -l /path/to/example -r gs://[your-bucket]/[your-target-path] -r 30
 ```
-
-## Architecture overview
-
-The following diagram provides a non-technical summary of the cloud architecture implemented herein. Please refer to the [design document](DESIGN.md) for a technical diagram and per-component narratives.
-
-![CircleCI](inquiry/docs/assets/arch-pm.png)
 
 ### Acknowledgements
 
