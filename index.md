@@ -1,5 +1,3 @@
-**Inquiry** is a comprehensive biological data science infrastructure stack.
-
 **We use [GitHub issues](https://github.com/.../issues) for
 tracking requests and bugs.**
 
