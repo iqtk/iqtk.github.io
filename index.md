@@ -1,4 +1,4 @@
-**We use [GitHub issues](https://github.com/.../issues) for
+**We use [GitHub issues](https://github.com/iqtk/iqtk/issues) for
 tracking requests and bugs.**
 
 ## Installation
