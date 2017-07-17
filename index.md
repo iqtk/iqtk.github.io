@@ -1,16 +1,15 @@
 **We use [GitHub issues](https://github.com/.../issues) for
 tracking requests and bugs.**
 
-
 ## Installation
 
-The Inquiry framework and toolkit can be installed with combined setup script:
+The iqtk docker image can be obtained as follows:
 
 ```bash
-curl scripts.iqtk.io/setup | bash
+docker pull gcr.io/jbei-cloud/iqtk:latest
 ```
 
-Or using pip, as follows:
+The toolkit can also be pip installed directly but if using this approach we suggest doing so within a virtual environment like conda or virtualenv.
 
 ```bash
 pip install iqtk
