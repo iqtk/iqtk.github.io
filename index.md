@@ -6,7 +6,7 @@ tracking requests and bugs.**
 The latest `iqtk` docker image can be obtained as follows:
 
 ```bash
-docker pull gcr.io/jbei-cloud/iqtk:latest
+docker pull gcr.io/jbei-cloud/iqtk:0.0.1
 ```
 
 The toolkit can also be pip installed directly but if using this approach we suggest doing so within a virtual environment like `conda` or `virtualenv`.
