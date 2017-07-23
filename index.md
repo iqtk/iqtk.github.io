@@ -217,7 +217,7 @@ Make sure the service account you create has read and write access to the target
 
 The following diagram provides a non-technical summary of the cloud architecture implemented herein. Please refer to the [design document](https://github.com/iqtk/iqtk/blob/master/inquiry/docs/DESIGN.md) for a technical diagram and per-component narratives.
 
-![](inquiry/docs/assets/arch-pmm.png)
+![](inquiry/docs/assets/arch-pm.png)
 
 ### Acknowledgements
 
