@@ -228,7 +228,7 @@ We would like to acknowledge the value of input received from members of the Goo
 Want to get in touch? You can [provide feedback](https://goo.gl/forms/2cOmuUrQ3n3CKpim1) regarding this or other documentation, [reach out to us](https://goo.gl/forms/j8FWdNJqABAoJvcW2) regarding collaboration, or [request a new feature or analytical capability](https://goo.gl/forms/dQm3SDcoNZsV7AAd2).
 
 <div style="padding-top: 30px">
-<p style="color:#9E9E9E; text-align:center">This notebook was prepared as part of the <a href="https://github.com/iqtk/iqtk">Inquiry Toolkit</a> project at the Joint BioEnergy Institute (JBEI). Learn more at https://www.jbei.org/.</p>
+<p style="color:#9E9E9E; text-align:center">This page was prepared as part of the <a href="https://github.com/iqtk/iqtk">Inquiry Toolkit</a> project at the Joint BioEnergy Institute (JBEI). Learn more at https://www.jbei.org/.</p>
 <p style="color:#9E9E9E; text-align:center">The Joint BioEnergy Institute is a program of the U.S. Department of Energy Office of Science.</p>
 <p style="color:#9E9E9E; text-align:center">© Regents of the University of California, 2017. Licensed under a BSD-3 <a href="https://github.com/iqtk/iqtk/blob/master/LICENSE">license</a>.</p>
 </div>
