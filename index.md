@@ -7,9 +7,9 @@ tracking requests and bugs.**
 
 Here are a few tutorials to get you started!
 
-* [Genotype Analysis with GATK:](https://discover.iqtk.io/tutorials/genotype-gatk.html) Learn how to call genome sequence polymorphisms against a reference genome sequence.
-* [Metabolome analysis with XCMS3:](https://discover.iqtk.io/tutorials/metabolite-analysis.html) Learn how to use XCMS3 to quantify the levels of metabolites in a sample of interest.
-* [Transcriptome analysis with the Tuxedo suite:](https://discover.iqtk.io/tutorials/rna-quantification.html) Learn how to quantify and compare gene expression levels across samples.
+* [Genotype Analysis with GATK:](https://github.com/iqtk/iqtk/blob/master/inquiry/docs/tutorials/genotype-gatk.ipynb) Learn how to call genome sequence polymorphisms against a reference genome sequence.
+* [Metabolome analysis with XCMS3:](https://github.com/iqtk/iqtk/blob/master/inquiry/docs/tutorials/metabolite-analysis.ipynb) Learn how to use XCMS3 to quantify the levels of metabolites in a sample of interest.
+* [Transcriptome analysis with the Tuxedo suite:](https://github.com/iqtk/iqtk/blob/master/inquiry/docs/tutorials/rna_quantification.ipynb) Learn how to quantify and compare gene expression levels across samples.
 
 Each of the above tutorials shows you how to submit workflows form the `iqtk` command line utility as well as an aspirational demo of the DataFlow UI for submitting these as templates.
 
