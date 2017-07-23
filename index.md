@@ -1,7 +1,3 @@
-<div align="center">
-  <img src="https://raw.githubusercontent.com/iqtk/iqtk/master/inquiry/docs/assets/logo_blue_small.png" style="width:100px"></img>
-</div>
-
 **We use [GitHub issues](https://github.com/iqtk/iqtk/issues) for
 tracking requests and bugs.**
 
@@ -234,3 +230,7 @@ Want to get in touch? You can [provide feedback](https://goo.gl/forms/2cOmuUrQ3n
 Read more about the Joint BioEnergy Institute (JBEI) at https://www.jbei.org/.
 
 © Regents of the University of California, 2017. Licensed under a BSD-3 <a href="https://github.com/.../blob/master/LICENSE">license</a>.
+
+<div align="center">
+<img src="https://raw.githubusercontent.com/iqtk/iqtk/master/inquiry/docs/assets/logotype_blue_small.png" style="width:100px">
+</div>
