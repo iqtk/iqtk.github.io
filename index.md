@@ -38,34 +38,26 @@ docker pull quay.io/iqtk/iqtk
 The core workflows can be run as simply as the following,
 
 ```bash
-iqtk run expression --config=path/to/your/run_conf.json
+iqtk run expression --config=[path to your JSON config e.g. ~/diffex.json]
 ```
 
 provided a config file with the necessary input files. The following is an example of this for the RNA-seq analysis workflow:
 
 ```json
+# diffex.json
 {
-  "_meta": {
-    "workflow": "core:expression"
-  },
-  "ref_fasta": "gs://cflow-public/data/genomes/Drosophila_melanogaster/Ensembl/BDGP5.25/Sequence/BowtieIndex/genome.fa",
-  "genes_gtf": "gs://cflow-public/data/genomes/Drosophila_melanogaster/Ensembl/BDGP5.25/Annotation/Archives/archive-2015-07-17-14-30-26/Genes/genes.gtf",
+  "cloud": true,
+  "local": false,
+  "ref_fasta": "gs://iqtk/dmel/bt2/genome.fa",
+  "genes_gtf": "gs://iqtk/dmel/annotation/genes.gtf",
   "cond_a_pairs": [
-    ["gs://cflow-public/data/rnaseq/downsampled_reads/GSM794483_C1_R1_1_small.fq",
-     "gs://cflow-public/data/rnaseq/downsampled_reads/GSM794483_C1_R1_2_small.fq"],
-    ["gs://cflow-public/data/rnaseq/downsampled_reads/GSM794484_C1_R2_1_small.fq",
-     "gs://cflow-public/data/rnaseq/downsampled_reads/GSM794484_C1_R2_2_small.fq"],
-    ["gs://cflow-public/data/rnaseq/downsampled_reads/GSM794485_C1_R3_1_small.fq",
-     "gs://cflow-public/data/rnaseq/downsampled_reads/GSM794485_C1_R3_2_small.fq"]
-   ],
-   "cond_b_pairs": [
-     ["gs://cflow-public/data/rnaseq/downsampled_reads/GSM794486_C2_R1_1_small.fq",
-      "gs://cflow-public/data/rnaseq/downsampled_reads/GSM794486_C2_R1_2_small.fq"],
-     ["gs://cflow-public/data/rnaseq/downsampled_reads/GSM794487_C2_R2_1_small.fq",
-      "gs://cflow-public/data/rnaseq/downsampled_reads/GSM794487_C2_R2_2_small.fq"],
-     ["gs://cflow-public/data/rnaseq/downsampled_reads/GSM794488_C2_R3_1_small.fq",
-      "gs://cflow-public/data/rnaseq/downsampled_readsGSM794488_C2_R3_2_small.fq"]
-    ]
+      ["gs://iqtk/rnaseq/GSM794483_C1_R1_1_small.fq",
+       "gs://iqtk/rnaseq/GSM794483_C1_R1_2_small.fq"]
+      ],
+  "cond_b_pairs": [
+       ["gs://iqtk/rnaseq/GSM794486_C2_R1_1_small.fq",
+        "gs://iqtk/rnaseq/GSM794486_C2_R1_2_small.fq"]
+       ]
 }
 
 ```
@@ -90,7 +82,7 @@ class TranscriptomicsWorkflow(Workflow):
     def define(self):
         p, args = self.p, self.args
 
-        # For each condition, create a PCollection to store the input read pairs.
+        # # For each condition, create a PCollection to store the input read pairs.
         reads_a = util.fc_create(p, args.cond_a_pairs)
         reads_b = util.fc_create(p, args.cond_b_pairs)
 
@@ -124,7 +116,7 @@ class TranscriptomicsWorkflow(Workflow):
 
         # Perform a single `cuffmerge` operation to merge all of the gene
         # annotations into a single annotation.
-        cm = (util.match(cl, {'file_type': 'transcripts.gtf'})
+        cm = (util.union(util.match(cl, {'file_type': 'transcripts.gtf'}))
               | task.ContainerTaskRunner(
                   ops.CuffMerge(args=args,
                                 ref_fasta=args.ref_fasta,
@@ -134,15 +126,14 @@ class TranscriptomicsWorkflow(Workflow):
         # Run a single cuffdiff operation comparing the prevalence of features in
         # the input annotatio across conditions using reads obtained for those
         # conditions.
-        cd = (util.match(cm, {'file_type': 'gtf'})
-              | task.ContainerTaskRunner(
-                  ops.CuffDiff(args=args,
-                               ref_fasta=args.ref_fasta,
-                               cond_a_bams=AsList(align_a),
-                               cond_b_bams=AsList(align_b))
-                  ))
+        cd = ops.cuffdiff(util.match(cm, {'file_type': 'gtf'}),
+                          ref_fasta=args.ref_fasta,
+                          args=args,
+                          cond_a_bams=AsList(align_a),
+                          cond_b_bams=AsList(align_b))
 
         return cd
+
 
 ```
 
