@@ -7,7 +7,7 @@ tracking requests and bugs.**
 
 Here are a few tutorials to get you started!
 
-* [Genotype Analysis with GATK:](https://discover.iqtk.io/tutorials/genotype-gatk.html) Learn how to call genome sequence polymorphisms against a reference genome sequence.
+* [Genotype Analysis with Samtools:](https://discover.iqtk.io/tutorials/genotype-samtools.html) Learn how to call genome sequence polymorphisms against a reference genome sequence.
 * [Metabolome analysis with XCMS3:](https://discover.iqtk.io/tutorials/metabolite-analysis.html) Learn how to use XCMS3 to quantify the levels of metabolites in a sample of interest.
 * [Transcriptome analysis with the Tuxedo suite:](https://discover.iqtk.io/tutorials/rna-quantification.html) Learn how to quantify and compare gene expression levels across samples.
 
