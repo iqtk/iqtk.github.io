@@ -82,7 +82,7 @@ class TranscriptomicsWorkflow(Workflow):
     def define(self):
         p, args = self.p, self.args
 
-        # # For each condition, create a PCollection to store the input read pairs.
+        # For each condition, create a PCollection to store the input read pairs.
         reads_a = util.fc_create(p, args.cond_a_pairs)
         reads_b = util.fc_create(p, args.cond_b_pairs)
 
@@ -132,8 +132,12 @@ class TranscriptomicsWorkflow(Workflow):
                           cond_a_bams=AsList(align_a),
                           cond_b_bams=AsList(align_b))
 
-        return cd
+        (util.match(cd, {'file_type': 'differentialExpressionCSV'})
+        | 'bq-upload' >> beam.ParDo(
+             ops.DiffExBQUpload(args.bq_dataset_name, args.bq_table_name)
+             ))
 
+        return cd
 
 ```
 
