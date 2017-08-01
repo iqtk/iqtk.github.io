@@ -13,7 +13,9 @@ Here are a few tutorials to get you started!
 
 Each of the above tutorials shows you how to submit workflows form the `iqtk` command line utility as well as an aspirational demo of the DataFlow UI for submitting these as templates.
 
-<iframe src="https://www.youtube.com/embed/gzB6Cba8u9E" frameborder="0" allowfullscreen></iframe>
+<div style="text-align: center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gzB6Cba8u9E" frameborder="0" allowfullscreen></iframe>
+</div>
 
 # Developers
 
